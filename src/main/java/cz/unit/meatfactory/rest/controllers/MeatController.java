@@ -19,6 +19,9 @@ public class MeatController {
         Meat meat = session.get(Meat.class, id);
         session.close();
 
+        if(meat == null) {
+            return new Meat();
+        }
         return meat;
     }
 
